@@ -1,6 +1,6 @@
 ---
-name: optimize
-description: "Autonomous improvement loop for any task with a shell-measurable metric. Use when the user asks to 'optimize', 'autoloop', 'autoresearch', 'run improvement loop', 'optimize metric', 'autonomous loop', or wants to iteratively improve any measurable metric."
+name: auto
+description: "Autonomous improvement loop for any task with a shell-measurable metric. Use when the user asks to 'autoloop', 'autoresearch', 'run improvement loop', 'autonomous loop', or wants to iteratively improve any measurable metric."
 disable-model-invocation: true
 ---
 

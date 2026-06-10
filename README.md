@@ -13,7 +13,7 @@ A Claude Code plugin for loop engineering: stop prompting your agent by hand and
 
 | Skill | What it does |
 | --- | --- |
-| `skills/optimize` | Autonomous improvement loop: try a change, measure it with a shell command, keep what improves, `git reset` what doesn't. Resumable via a TSV log; schedulable; parallel beam search via worktrees. |
+| `skills/auto` | Autonomous improvement loop: try a change, measure it with a shell command, keep what improves, `git reset` what doesn't. Resumable via a TSV log; schedulable; parallel beam search via worktrees. |
 | `skills/design` | Turns a vague goal ("make this faster") into a ready-to-run optimize invocation: picks a non-gameable metric, draws scope, chooses a verifier. |
 
 ## Agents
@@ -36,7 +36,7 @@ Design a loop from a vague goal:
 Run a loop directly:
 
 ```
-/loops:optimize
+/loops:auto
 goal: minimize production Docker image size in MB
 metric: docker image inspect app --format '{{.Size}}' | awk '{print $1/1048576}'
 direction: down
