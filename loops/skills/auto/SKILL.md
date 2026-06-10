@@ -1,7 +1,6 @@
 ---
 name: auto
 description: "Autonomous improvement loop for any task with a shell-measurable metric. Use when the user asks to 'autoloop', 'autoresearch', 'run improvement loop', 'autonomous loop', or wants to iteratively improve any measurable metric."
-disable-model-invocation: true
 ---
 
 Autonomous improvement loop: try a change, measure it against a metric, keep what improves, revert what doesn't. Works for any file-based task where progress is measurable by a shell command — writing, data analysis, config tuning, prompt engineering, infrastructure, software. Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch): one mutable surface, one metric, fixed time budget, git as the keep/revert mechanism. Autonomy comes from constraints, not freedom.

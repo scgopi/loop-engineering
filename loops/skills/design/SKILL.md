@@ -1,7 +1,6 @@
 ---
 name: design
 description: "Design an autonomous improvement loop from a vague goal. Use when the user wants to 'design a loop', 'set up a loop', 'loop engineer' a task, or has an improvement goal but no metric, scope, or verifier yet. Produces a ready-to-run auto invocation."
-disable-model-invocation: true
 ---
 
 Turn a vague improvement goal into a ready-to-run `/loops:auto` invocation. The hard part of loop engineering is not running the loop — it is choosing a metric that can't be gamed, a scope that can't wander, and a verifier that makes "done" mean something. This skill does that design work.
