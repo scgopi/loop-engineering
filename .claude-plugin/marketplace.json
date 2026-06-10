@@ -1,0 +1,14 @@
+{
+  "name": "looping",
+  "owner": {
+    "name": "Sravani Pagidela",
+    "email": "sravani2201@outlook.com"
+  },
+  "plugins": [
+    {
+      "name": "loop-engineering",
+      "source": "./loop-engineering",
+      "description": "Loop engineering toolkit: autoloop improvement loop, loop-design skill, and a four-agent team (scout, forge, critic, scribe)."
+    }
+  ]
+}
