@@ -9,12 +9,17 @@ A Claude Code plugin for loop engineering: stop prompting your agent by hand and
 /plugin install loops@loop-engineering
 ```
 
-## What's inside
+## Skills
 
-| Component | What it does |
+| Skill | What it does |
 | --- | --- |
 | `skills/optimize` | Autonomous improvement loop: try a change, measure it with a shell command, keep what improves, `git reset` what doesn't. Resumable via a TSV log; schedulable; parallel beam search via worktrees. |
 | `skills/design` | Turns a vague goal ("make this faster") into a ready-to-run optimize invocation: picks a non-gameable metric, draws scope, chooses a verifier. |
+
+## Agents
+
+| Agent | What it does |
+| --- | --- |
 | `agents/scout` | Read-only explorer. Maps the repo, finds candidate work. |
 | `agents/forge` | Maker. Implements one hypothesis in an isolated git worktree (`isolation: worktree`). Never commits, never widens the job. |
 | `agents/critic` | Adversarial verifier. Runs the tests itself, reads the real diff, rejects anything unverifiable. The maker never gets the final word. |
