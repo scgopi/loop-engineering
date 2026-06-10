@@ -28,7 +28,7 @@ Pass as `key: value` lines.
 - `frozen` — Files never modified (default: everything outside scope)
 - `target` — Stop when metric reaches this value
 - `max_iters` — Iteration cap (default: unlimited)
-- `parallel` — Hypotheses per iteration (1–3, default 1)
+- `parallel` — Max hypotheses per iteration (1–3, default 1). Treated as a hint; the loop decides per iteration whether parallel dispatch is actually warranted (see below).
 - `log` — Results TSV path (default: `loop_results.tsv`)
 - `strategy` — Hints to guide exploration
 
@@ -52,9 +52,18 @@ Pass as `key: value` lines.
 
 ## Parallel loop (parallel=2–3)
 
-Dispatch N forge agents simultaneously, each in its own worktree (`isolation: worktree`), testing one hypothesis each. Collect results, discard any that fail verify, keep the best metric winner. If none improved, discard all and reset.
+`parallel > 1` is a hint, not a guarantee. Before each iteration, check all four conditions:
 
-Use `scout` for reconnaissance, `forge` for hypothesis testing, `critic` to verify the winner, `scribe` to update the log.
+1. **Metric is self-contained** — runs entirely within the worktree; no external server, database, or shared filesystem state required.
+2. **Verify is self-contained** — same: runs in isolation without side effects on shared state.
+3. **Hypotheses are orthogonal** — the approaches you'd dispatch are genuinely different strategies, not variations of the same idea.
+4. **No active crash streak** — if the last iteration crashed, the environment may be broken; fix it before fanning out.
+
+If all four hold → dispatch agents. If any fail → run sequentially this iteration and note why.
+
+**Dispatch:** one `forge` agent per hypothesis, each in its own worktree (`isolation: worktree`). Use `scout` for reconnaissance before ideating, `critic` to verify the winner, `scribe` to update the log.
+
+Collect results, eliminate any that fail verify, keep the best metric winner. If none improved, discard all and reset.
 
 Teammate prompt:
 ```
