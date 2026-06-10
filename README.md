@@ -56,4 +56,4 @@ claude --plugin-dir ./loops
 
 ## Design
 
-Every loop follows five steps: define a measurable goal (metric + direction + target = one stop condition), scope it (scope/frozen), trigger it (in-session or scheduled), act then verify (forge makes, critic checks — never the same agent), persist state (log + git survive between runs). Inspired by [Karpathy's autoresearch](https://github.com/karpathy/autoresearch) and the loop-engineering pattern described by [Addy Osmani](https://addyosmani.com/blog/loop-engineering/).
+Every loop follows five steps: define a measurable goal (metric + direction + target = one stop condition), scope it (scope/frozen), trigger it (in-session or scheduled), act then verify (forge makes, critic checks — never the same agent), persist state (log + git survive between runs).
