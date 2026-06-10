@@ -1,4 +1,4 @@
-# loop-engineering
+# loops
 
 A Claude Code plugin for loop engineering: stop prompting your agent by hand and design the system that prompts it. One optimization loop, one design skill, and a four-agent team with the maker–checker split built in.
 
@@ -7,7 +7,7 @@ A Claude Code plugin for loop engineering: stop prompting your agent by hand and
 | Component | What it does |
 | --- | --- |
 | `skills/optimize` | Autonomous improvement loop: try a change, measure it with a shell command, keep what improves, `git reset` what doesn't. Resumable via a TSV log; schedulable; parallel beam search via worktrees. |
-| `skills/loop-design` | Turns a vague goal ("make this faster") into a ready-to-run optimize invocation: picks a non-gameable metric, draws scope, chooses a verifier. |
+| `skills/design` | Turns a vague goal ("make this faster") into a ready-to-run optimize invocation: picks a non-gameable metric, draws scope, chooses a verifier. |
 | `agents/scout` | Read-only explorer. Maps the repo, finds candidate work. |
 | `agents/forge` | Maker. Implements one hypothesis in an isolated git worktree (`isolation: worktree`). Never commits, never widens the job. |
 | `agents/critic` | Adversarial verifier. Runs the tests itself, reads the real diff, rejects anything unverifiable. The maker never gets the final word. |
@@ -18,14 +18,14 @@ A Claude Code plugin for loop engineering: stop prompting your agent by hand and
 From this repo as a marketplace:
 
 ```
-/plugin marketplace add <github-user>/looping
-/plugin install loop-engineering@looping
+/plugin marketplace add <github-user>/loop-engineering
+/plugin install loops@loop-engineering
 ```
 
 Or test locally:
 
 ```
-claude --plugin-dir ./loop-engineering
+claude --plugin-dir ./loops
 ```
 
 ## Use
@@ -33,13 +33,13 @@ claude --plugin-dir ./loop-engineering
 Design a loop from a vague goal:
 
 ```
-/loop-engineering:loop-design make the user guide easier to read
+/loops:design make the user guide easier to read
 ```
 
 Run a loop directly:
 
 ```
-/loop-engineering:optimize
+/loops:optimize
 goal: minimize production Docker image size in MB
 metric: docker image inspect app --format '{{.Size}}' | awk '{print $1/1048576}'
 direction: down

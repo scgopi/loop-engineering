@@ -1,0 +1,11 @@
+{
+  "name": "loops",
+  "description": "Loop engineering toolkit: design loops that prompt your agents. Includes the optimize improvement loop, a design skill, and a four-agent team (scout, forge, critic, scribe) with worktree isolation.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Sravani Pagidela",
+    "email": "sravani2201@outlook.com"
+  },
+  "license": "MIT",
+  "keywords": ["loop-engineering", "optimize", "agents", "optimization", "worktree"]
+}

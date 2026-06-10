@@ -100,7 +100,7 @@ Tab-separated, columns `commit`, `metric`, `status`, `description`; status is `b
 
 **Writing — reduce reading difficulty:**
 ```
-/loop-engineering:optimize
+/loops:optimize
 goal: make the user guide readable at an 8th-grade level
 metric: textstat grade_level docs/user-guide.md
 direction: down
@@ -112,7 +112,7 @@ strategy: shorten sentences, replace jargon, break up long paragraphs
 
 **Data science — improve model accuracy (with verifier):**
 ```
-/loop-engineering:optimize
+/loops:optimize
 goal: maximize validation accuracy on the sentiment classifier
 metric: python train.py --eval-only | grep val_acc
 direction: up
