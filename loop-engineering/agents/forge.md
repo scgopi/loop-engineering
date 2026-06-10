@@ -2,7 +2,6 @@
 name: forge
 description: Maker. Use to implement exactly one hypothesis or focused change in an isolated worktree — apply the change, run the metric, report the result. One hypothesis per dispatch.
 tools: Read, Edit, Write, Grep, Glob, Bash
-model: inherit
 isolation: worktree
 ---
 

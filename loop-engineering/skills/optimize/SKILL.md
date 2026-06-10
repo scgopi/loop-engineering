@@ -1,6 +1,6 @@
 ---
-name: autoloop
-description: "Autonomous improvement loop for any task with a shell-measurable metric. Use when the user asks to 'autoloop', 'autoresearch', 'run improvement loop', 'optimize metric', 'autonomous loop', or wants to iteratively improve any measurable metric."
+name: optimize
+description: "Autonomous improvement loop for any task with a shell-measurable metric. Use when the user asks to 'optimize', 'autoloop', 'autoresearch', 'run improvement loop', 'optimize metric', 'autonomous loop', or wants to iteratively improve any measurable metric."
 disable-model-invocation: true
 ---
 
@@ -31,7 +31,7 @@ Pass as `key: value` lines.
 - `target` — Stop when metric reaches this value
 - `max_iters` — Iteration cap (default: unlimited)
 - `parallel` — Hypotheses per iteration (1–3, default 1). >1 dispatches a team of agents in isolated worktrees; best result wins (beam search instead of greedy)
-- `log` — Results TSV path (default: `autoloop_results.tsv`)
+- `log` — Results TSV path (default: `loop_results.tsv`)
 - `strategy` — Hints to guide exploration
 - `simplicity` — Prefer simpler on metric ties (default: true)
 
@@ -69,7 +69,7 @@ Use the plugin's agents by role when dispatching: `scout` for read-only reconnai
 Teammate prompt:
 
 ```
-You are one member of an autoloop agent team, testing a single hypothesis.
+You are one member of an optimize-loop agent team, testing a single hypothesis.
 Goal: {goal} | Hypothesis: {hypothesis} | Scope: {scope} | Frozen: {frozen}
 Metric: {metric} | Direction: {direction} | Time budget: {time_budget} min
 
@@ -100,7 +100,7 @@ Tab-separated, columns `commit`, `metric`, `status`, `description`; status is `b
 
 **Writing — reduce reading difficulty:**
 ```
-/loop-engineering:autoloop
+/loop-engineering:optimize
 goal: make the user guide readable at an 8th-grade level
 metric: textstat grade_level docs/user-guide.md
 direction: down
@@ -112,7 +112,7 @@ strategy: shorten sentences, replace jargon, break up long paragraphs
 
 **Data science — improve model accuracy (with verifier):**
 ```
-/loop-engineering:autoloop
+/loop-engineering:optimize
 goal: maximize validation accuracy on the sentiment classifier
 metric: python train.py --eval-only | grep val_acc
 direction: up

@@ -6,12 +6,12 @@ A Claude Code plugin for loop engineering: stop prompting your agent by hand and
 
 | Component | What it does |
 | --- | --- |
-| `skills/autoloop` | Autonomous improvement loop: try a change, measure it with a shell command, keep what improves, `git reset` what doesn't. Resumable via a TSV log; schedulable; parallel beam search via worktrees. |
-| `skills/loop-design` | Turns a vague goal ("make this faster") into a ready-to-run autoloop invocation: picks a non-gameable metric, draws scope, chooses a verifier. |
-| `agents/scout` | Read-only explorer (haiku). Maps the repo, finds candidate work. |
+| `skills/optimize` | Autonomous improvement loop: try a change, measure it with a shell command, keep what improves, `git reset` what doesn't. Resumable via a TSV log; schedulable; parallel beam search via worktrees. |
+| `skills/loop-design` | Turns a vague goal ("make this faster") into a ready-to-run optimize invocation: picks a non-gameable metric, draws scope, chooses a verifier. |
+| `agents/scout` | Read-only explorer. Maps the repo, finds candidate work. |
 | `agents/forge` | Maker. Implements one hypothesis in an isolated git worktree (`isolation: worktree`). Never commits, never widens the job. |
-| `agents/critic` | Adversarial verifier (opus). Runs the tests itself, reads the real diff, rejects anything unverifiable. The maker never gets the final word. |
-| `agents/scribe` | Memory keeper (haiku). Maintains the experiment log and state files so runs resume instead of restarting. |
+| `agents/critic` | Adversarial verifier. Runs the tests itself, reads the real diff, rejects anything unverifiable. The maker never gets the final word. |
+| `agents/scribe` | Memory keeper. Maintains the experiment log and state files so runs resume instead of restarting. |
 
 ## Install
 
@@ -39,7 +39,7 @@ Design a loop from a vague goal:
 Run a loop directly:
 
 ```
-/loop-engineering:autoloop
+/loop-engineering:optimize
 goal: minimize production Docker image size in MB
 metric: docker image inspect app --format '{{.Size}}' | awk '{print $1/1048576}'
 direction: down
