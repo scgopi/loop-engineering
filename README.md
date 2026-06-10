@@ -1,15 +1,15 @@
-# loop-engineering
+# loops
 
 A Claude Code plugin for loop engineering: stop prompting your agent by hand and design the system that prompts it. One optimization loop, one design skill, and a four-agent team with the maker–checker split built in.
 
 ## Install
 
 ```
-/plugin marketplace add scgopi/loop-engineering
+/plugin marketplace add scgopi/loops
 ```
 
 ```
-/plugin install loops@loop-engineering
+/plugin install loops@loops
 ```
 
 ## Skills
@@ -17,7 +17,7 @@ A Claude Code plugin for loop engineering: stop prompting your agent by hand and
 | Skill | What it does |
 | --- | --- |
 | `skills/auto` | Autonomous improvement loop: try a change, measure it with a shell command, keep what improves, `git reset` what doesn't. Resumable via a TSV log; schedulable; parallel beam search via worktrees. |
-| `skills/design` | Turns a vague goal ("make this faster") into a ready-to-run optimize invocation: picks a non-gameable metric, draws scope, chooses a verifier. |
+| `skills/design` | Turns a vague goal ("make this faster") into a ready-to-run auto invocation: picks a non-gameable metric, draws scope, chooses a verifier. |
 
 ## Agents
 

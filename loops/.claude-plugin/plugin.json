@@ -3,9 +3,9 @@
   "description": "Loop engineering toolkit: design loops that prompt your agents. Includes the auto improvement loop, a design skill, and a four-agent team (scout, forge, critic, scribe) with worktree isolation.",
   "version": "0.2.0",
   "author": {
-    "name": "Sravani Pagidela",
-    "email": "sravani2201@outlook.com"
+    "name": "scgopi",
+    "email": "scgopireddy@gmail.com"
   },
   "license": "MIT",
-  "keywords": ["loop-engineering", "auto", "agents", "autonomous-loop", "worktree"]
+  "keywords": ["loops", "auto", "agents", "autonomous-loop", "worktree"]
 }

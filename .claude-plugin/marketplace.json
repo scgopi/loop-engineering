@@ -1,14 +1,14 @@
 {
-  "name": "loop-engineering",
+  "name": "loops",
   "owner": {
-    "name": "Sravani Pagidela",
-    "email": "sravani2201@outlook.com"
+    "name": "scgopi",
+    "email": "scgopireddy@gmail.com"
   },
   "plugins": [
     {
       "name": "loops",
       "source": "./loops",
-      "description": "Loop engineering toolkit: optimize improvement loop, design skill, and a four-agent team (scout, forge, critic, scribe)."
+      "description": "Loop engineering toolkit: auto improvement loop, design skill, and a four-agent team (scout, forge, critic, scribe)."
     }
   ]
 }

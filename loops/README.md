@@ -18,8 +18,8 @@ A Claude Code plugin for loop engineering: stop prompting your agent by hand and
 From this repo as a marketplace:
 
 ```
-/plugin marketplace add <github-user>/loop-engineering
-/plugin install loops@loop-engineering
+/plugin marketplace add scgopi/loops
+/plugin install loops@loops
 ```
 
 Or test locally:
