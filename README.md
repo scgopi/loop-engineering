@@ -6,6 +6,9 @@ A Claude Code plugin for loop engineering: stop prompting your agent by hand and
 
 ```
 /plugin marketplace add scgopi/loop-engineering
+```
+
+```
 /plugin install loops@loop-engineering
 ```
 
